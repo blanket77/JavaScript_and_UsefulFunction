@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>실습</title>
+    <style>
+      .good{
+        background-color : red;
+      }
+      #worst{
+        background-color : blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WEB</h1>
+    <input type="button" value="night" onclick="document.querySelector('body').style.backgroundColor= 'black';
+    document.querySelector('body').style.color='white';
+    ">
+    <input type="button" value="day" onclick="document.querySelector('body').style.backgroundColor= 'white';
+    document.querySelector('body').style.color='black';
+    ">
+    <input id="night_day" type="button" value="night" onclick="
+    if( document.querySelector('#night_day').value === 'night'){
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+      document.querySelector('#night_day').value='day';
+
+      var alist = document.querySelectorAll('a');
+      var i =0;
+      while(i < alist.length){
+        alist[i].style.color = 'powderblue';
+        i = i+1;
+      }
+    }else{
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black';
+      document.querySelector('#night_day').value='night';
+
+      var alist = document.querySelectorAll('a');
+      var i =0;
+      while(i < alist.length){
+        alist[i].style.color = 'blue';
+        i = i+1;
+    }
+  }
+    ">
+    <ol>
+      <li>
+        <a href="http://naver.com">HTML</a>
+      </li>
+      <li>
+        <a href="http://daum.net">CSS</a>
+      </li>
+      <li>
+        <a href="JS1.html">JavaScript</a>
+      </li>
+    </ol>
+    <h2>JavaScript란 무엇인가?</h2>
+    <p><span class="good">자바스크립트</span>는 자바와 <span id="worst">스크립트</span>이다.</p>
+    배고 &lt; 파<br>
+
+    <script>
+      function onPlusOne() {
+        document.write(1+1+'<br>');
+      }
+      onPlusOne();
+      function sum(left, right){
+        document.write('<div style="color : red;">' + left + right + '</div><br>');
+      }
+      sum(2,3);
+      sum(3,4);
+
+    </script>
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if( this.value === 'night'){
+      target.style.backgroundColor='black';
+      target.style.color='white';
+      this.value='day';
+    }else{
+      target.style.backgroundColor='white';
+      target.style.color='black';
+      this.value='night';
+      <!-- this로 하면 유지보수 굳 -->
+    }
+    ">
+  </body>
+</html>

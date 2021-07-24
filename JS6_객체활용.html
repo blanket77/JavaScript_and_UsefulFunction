@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>객체활용실습</title>
+    <style>
+      .good{
+        background-color : red;
+      }
+      #worst{
+        background-color : blue;
+      }
+    </style>
+    <script>
+    var body = {
+      setBackgroundColor: function(col) {
+          document.querySelector('body').style.backgroundColor=col;
+        },
+      setColor: function(col){
+        document.querySelector('body').style.color=col;
+      }
+    }
+
+    var links = {
+      setColor: function(col) {
+        var alist = document.querySelectorAll('a');
+        var i=0;
+        while(i<alist.length){
+          alist[i].style.color = col;
+          i = i+1;
+      }
+    }
+  }
+
+      function night_day_button(self)
+      {
+        if(self.value === 'night'){
+          body.setBackgroundColor("black");
+          body.setColor("white");
+          self.value="day";
+
+          links.setColor("powderblue");
+        }
+        else{
+          body.setBackgroundColor("white");
+          body.setColor("black");
+          self.value="night";
+
+          links.setColor("blue");
+        }
+}
+    </script>
+  </head>
+  <body>
+    <h1>WEB</h1>
+    <input type="button" value="night" onclick="night_day_button(this)">
+    <ol>
+      <li>
+        <a href="http://naver.com">HTML</a>
+      </li>
+      <li>
+        <a href="http://daum.net">CSS</a>
+      </li>
+      <li>
+        <a href="JS1.html">JavaScript</a>
+      </li>
+    </ol>
+    <h2>JavaScript란 무엇인가?</h2>
+    <p><span class="good">자바스크립트</span>는 자바와 <span id="worst">스크립트</span>이다.</p>
+    배고 &lt; 파<br>
+
+    <script>
+      function onPlusOne() {
+        document.write(1+1+'<br>');
+      }
+      onPlusOne();
+      function sum(left, right){
+        document.write('<div style="color : red;">' + left + right + '</div><br>');
+      }
+      sum(2,3);
+      sum(3,4);
+
+    </script>
+
+    <input type="button" value="night" onclick="night_day_button(this)">
+  </body>
+</html>
